@@ -1,0 +1,41 @@
+1. Napisz funkcje, która zwraca maksymalną zadaną liczbę ze stringa, składającą się z kolejnych liczb
+max_num("9512983", 1) # "9"
+max_num("9512983", 3) # "998"
+max_num("9512983", 7) # "9512983"
+2. Mając dane w takiej postaci, gdzie pierwszy index to numer strony, a drugi to numer zawartości.
+
+POST = {
+    u"page[1][1]['id']": [u'baloes_bd_8_1'],
+    u"page[0][1]['text']": [u'Mum, dad! Look, the school email. '],
+    u"page[1][0]['id']": [u'baloes_bd_9_1'],
+    u"page[0][1]['id']": [u'baloes_bd_6_1'],
+    u"page[0][0]['id']": [u'baloes_bd_5_1'],
+    u'next': [u'/mycontent/5910974510923776'],
+    u"page[0][0]['text']": [u'Some time later\u2026'],
+    u'space_id': [u'5910974510923776'],
+    u"page[1][0]['text']": [u'You open the email, Luana. \u2028It\u2019s for you!'
+                            ],
+    u"page[1][1]['text']": [u'Me too!'],
+    u'skip_editor': [u'1'],
+    }
+    
+    
+Stwórz listę stron, która będzie zawierała kolejne zawartości 'text' w postaci krotek (id, text).
+
+expected = [
+        [(u'baloes_bd_5_1', u'Some time later\u2026'), (u'baloes_bd_6_1', u'Mum, dad! Look, the school email.')],
+        [(u'baloes_bd_9_1', u'You open the email, Luana. \u2028It\u2019s for you!'), (u'baloes_bd_8_1', u'Me too!')]
+]
+
+3. Zaimplementuj algorytm znalezienia najkrótszej ścieżki w labiryncie na podstawie algorytmu
+Źródło: http://www.unit1.pl/349,txt (2018-02-12)
+
+Wynik: najkrótsza ścieżka
+Wynik: Droga w labiryncie, która prowadzi z pola s do wyjścia. 
+Krok 0: Przyjmij, ze na początku nie byłeś w żadnym polu labiryntu, a więc wszystkie pola są nieodwiedzone. 
+Krok 1: Umieść w kolejce Q pole s. W polu s umieść liczbę 0 (zero). 
+Krok 2: Dopóki kolejka Q nie jest pusta wykonuj kroki 3 – 5. 
+Krok 3: Usuń z kolejki Q jej pierwszy element - oznaczmy to pole przez v. 
+Krok 4: Dla każdego pola w sąsiedniego względem v i nieoddzielonego od niego ścianą wykonaj krok 5. 
+Krok 5: Jeśli nie byłeś jeszcze w polu w, to umieść w nim liczbę o jeden większą od liczby znajdującej się w polu v. Jeśli pole w zawiera wyjście to przejdź do kroku 6, a w przeciwnym razie dołącz w do końca kolejki Q. 
+Krok 6: (W tym kroku budujemy od końca listę pól tworzących najkrótszą drogę z pola s do pola w, na którym zakończył działanie krok 5). Dopóki w nie jest polem s, wykonuj: za kolejne (od końca) pole drogi przyjmij w i za nową wartość w przyjmij pole sąsiednie względem w, w którym znajduje się liczba o jeden mniejsza od liczby znajdującej się w obecnym polu w. 
