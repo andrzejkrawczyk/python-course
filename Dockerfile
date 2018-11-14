@@ -9,8 +9,7 @@ ADD . /app
 
 # Install any needed packages specified in requirements.
 RUN pip install --trusted-host pypi.python.org -r requirements.txt
-RUN jupyter-nbextension install rise --py --sys-prefix
-RUN jupyter-nbextension enable rise --py --sys-prefix
+RUN jupyter-nbextension install rise --py --sys-prefix && jupyter-nbextension enable rise --py --sys-prefix
 # Make port 80 available to the world outside this container
 EXPOSE 8888
 
