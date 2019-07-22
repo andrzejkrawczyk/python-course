@@ -1,0 +1,6 @@
+1. Napisz i zapisz macro, które przejdzie do Twojego folderu z konfiguracją. W następnym kroku otworzy plik do edycji.
+2. Napisz program, który kopiuje do schowka linię z ipythona. Windows - polecenie CLIP, linux - xclip
+3. Dodaj do pliku startowego wiadomość, która wypisze prognozę pogody na zbliżający się tydzien, wykorzystaj do tego: https://openweathermap.org/api. Wypisz prognozę pogody w postaci tabeli.
+4. Napisz line magic, który z wskazanego folderu wyciągnie wszystkie obrazki w formacie .jpg / .png
+5. Napisz program, który zaciągnie wskazane repozytorium angularowe z githuba do tymczasowego folderu. Zainstaluje wszystkie zależności i uruchomi serwer: https://github.com/ColinEberhardt/angular2-todo
+6. Do repozytorium z punktu 5 dodaj wersjonowanie, dodaj plik XML z listą wersji. Zipuj każdą nową wersję i umiejszczaj do folderu z zbudowanymi wersjami. Zacznij od numerowania wersji 1, podbijaj o 1.
